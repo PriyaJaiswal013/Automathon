@@ -1,0 +1,57 @@
+{% extends 'insurance/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; color:blue;">ADD POLICY</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+      <label for="course_name">Category</label>
+      {% render_field policyForm.category class="form-control" placeholder="Life Insurance" %}
+
+        <label for="course_name">Policy Name/Policy Number</label>
+      {% render_field policyForm.policy_name class="form-control" placeholder="Jeevan Surbhi" %}
+
+     <label for="course_name">Sum Assurance</label>
+      {% render_field policyForm.sum_assurance class="form-control" placeholder="100000" %}
+
+    <label for="course_name">Patient Name</label>
+      {% render_field policyForm.Pateint_name class="form-control" placeholder="Name" %}
+
+          <label for="course_name">Contact Number</label>
+      {% render_field policyForm.contact_no class="form-control" placeholder="9999999999" %}
+      
+      {% comment %} <label for="course_name">Date Of Birth</label>
+      {% render_field policyForm.date_of_birth class="form-control" placeholder="YYYY-MM-DD" %} {% endcomment %}
+
+      <label for="course_name">Insurance Card ID Number</label>
+      {% render_field policyForm.insured_card_id_number class="form-control" placeholder="ID No" %}
+      <label for="course_name">Total cost of hospitalization</label>
+      {% render_field policyForm.total_cost_hospitalization class="form-control" placeholder="Total Cost" %}
+      <label for="course_name">Gender</label>
+      {% render_field policyForm.gender class="form-control" placeholder="Gender" %}
+
+
+    </div>
+    
+    
+<br>
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+<br><br><br><br>
+{% endblock content %}
